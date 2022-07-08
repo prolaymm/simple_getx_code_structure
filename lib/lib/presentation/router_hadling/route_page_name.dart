@@ -4,4 +4,6 @@ class RoutePageName {
   static String rHome = "/home";
   static String rServices = "/services";
   static String rLogin = "/login";
+  static String rAbout = "/about";
+  static String rAddNewAddress = "/add-new-address";
 }
