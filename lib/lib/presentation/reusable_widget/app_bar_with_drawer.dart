@@ -5,16 +5,17 @@ import 'package:mya_ngwe_san/lib/presentation/reusable_widget/text_view.dart';
 
 import '../../utils/fonts_and_margins_constants.dart';
 
-class AppBarWithDrawer extends StatelessWidget with PreferredSizeWidget {
+class SimpleAppBarWithBackArrow extends StatelessWidget with PreferredSizeWidget {
   final String title;
   final Color? textColor;
+ final VoidCallback? onClick;
   final bool isBackArrow;
 
-  const AppBarWithDrawer(
+  const SimpleAppBarWithBackArrow(
       {Key? key,
         required this.title,
         required this.isBackArrow,
-        this.textColor})
+        this.textColor, this.onClick})
       : super(key: key);
 
   @override
@@ -31,7 +32,7 @@ class AppBarWithDrawer extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       leading: isBackArrow
           ? GestureDetector(
-        onTap: () => Get.back(),
+        onTap: () =>  Get.back(),
         child: Icon(
           Icons.arrow_back_ios_new_outlined,
           size: 24.sp,

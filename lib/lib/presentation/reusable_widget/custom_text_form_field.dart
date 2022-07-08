@@ -6,7 +6,7 @@ import '../../utils/fonts_and_margins_constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
-  final IconData icon;
+  final IconData? icon;
   final String hint;
   final bool? isPassword;
   final bool? isIcon;
@@ -25,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({Key? key,
     required this.controller,
-    required this.icon,
+    this.icon,
     required this.hint,
     this.isPhone,
     this.isPassword,
@@ -54,7 +54,7 @@ class CustomTextFormField extends StatelessWidget {
         child: TextFormField(
           obscureText: isPassword ?? false,
           controller: controller,
-          keyboardType: TextInputType.multiline,
+          keyboardType:isPhone??false ? TextInputType.number :  TextInputType.multiline,
           maxLines: maxLine ?? 1,
           style: TextStyle(
             fontSize: kMediumFont14.sp,
