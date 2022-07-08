@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_button.dart';
+import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_container.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_text_form_field.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/text_view.dart';
 import 'package:mya_ngwe_san/lib/presentation/screens/add_new_address_screen/city_and_state_dropdown.dart';
@@ -103,40 +105,43 @@ class AddNewAddressScreen extends StatelessWidget {
                 height: 10.h + 10.w,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextView(
                     title: "Make Default Ship Address",
                     fontSize: kMediumFont14.sp,
                   ),
+                  SizedBox(
+                    width: kDefaultMarginWidth.w,
+                  ),
                   Obx(
-                    ()=>  CustomSwitch(
-
+                    () => CustomSwitch(
                       value: addNewAddressVm.isMakeDefaultAddress.value,
-                      onChanged: (bool val){
-
+                      onChanged: (bool val) {
+                        debugPrint(val.toString());
                         addNewAddressVm.isMakeDefaultAddress.value = val;
                       },
                     ),
                   ),
-                  Obx(
-                      ()=>  SizedBox(
-                        width: 80,
-                        height: 20,
-                        child: CupertinoSwitch(
-                          value: addNewAddressVm.isMakeDefaultAddress.value,
-                          onChanged: (value) {
-
-                            addNewAddressVm.isMakeDefaultAddress.value = value;
-                          },
-                        ),
-                      ),
-                  )
                 ],
               ),
-
+              SizedBox(
+                height: 30.h + 30.w,
+              ),
             ],
           ),
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: kDefaultMarginWidth.w),
+        child: CustomButton(
+            onClick: () {},
+            buttonText: 'Save',
+            buttonColor: Theme.of(context).primaryColor,
+            radius: 6.r,
+            buttonTextColor: Theme.of(context).colorScheme.primaryContainer),
       ),
     );
   }

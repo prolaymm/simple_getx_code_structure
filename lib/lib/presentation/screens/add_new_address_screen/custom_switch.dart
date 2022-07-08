@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
 
-  CustomSwitch({Key? key, required this.value, required this.onChanged})
+  const CustomSwitch({Key? key, required this.value, required this.onChanged})
       : super(key: key);
 
   @override
@@ -19,13 +20,13 @@ class _CustomSwitchState extends State<CustomSwitch>
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 60));
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 60));
     _circleAnimation = AlignmentTween(
-        begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
-        end: widget.value ? Alignment.centerLeft : Alignment.centerRight)
+            begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
+            end: widget.value ? Alignment.centerLeft : Alignment.centerRight)
         .animate(CurvedAnimation(
-        parent: _animationController!, curve: Curves.linear));
+            parent: _animationController!, curve: Curves.linear));
   }
 
   @override
@@ -45,25 +46,26 @@ class _CustomSwitchState extends State<CustomSwitch>
                 : widget.onChanged(false);
           },
           child: Container(
-            width: 45.0,
-            height: 28.0,
+            width: 25.w + 25.h,
+            height: 14.0.h + 14.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24.0),
               color: _circleAnimation!.value == Alignment.centerLeft
-                  ? Colors.grey
-                  : Colors.blue,
+                  ? Theme.of(context).hintColor
+                  : Theme.of(context).primaryColor,
             ),
             child: Padding(
               padding: const EdgeInsets.only(
                   top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
               child: Container(
                 alignment:
-                widget.value ? Alignment.centerRight : Alignment.centerLeft,
+                    widget.value ? Alignment.centerRight : Alignment.centerLeft,
                 child: Container(
-                  width: 20.0,
-                  height: 20.0,
+                  width: 10.0.h + 10.w,
+                  height: 10.0.h + 10.w,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).colorScheme.primaryContainer),
                 ),
               ),
             ),

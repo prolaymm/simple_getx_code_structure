@@ -30,7 +30,11 @@ class StyleTheme {
         headline1: TextStyle(color: cOnPrimary),
         caption: TextStyle(color: cPrimaryColor),
       ),
-      buttonTheme: const ButtonThemeData(buttonColor: cPrimaryColor),
+
+      buttonTheme: const ButtonThemeData(buttonColor: cPrimaryColor,
+          shape: RoundedRectangleBorder(),
+      textTheme: ButtonTextTheme.accent,
+      ),
     );
   }
 }
