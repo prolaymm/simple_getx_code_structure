@@ -7,8 +7,8 @@ import '../../utils/fonts_and_margins_constants.dart';
 class CustomButton extends StatelessWidget {
   final String buttonText;
   final VoidCallback onClick;
-  final Color buttonTextColor;
-  final Color buttonColor;
+  final Color? buttonTextColor;
+  final Color? buttonColor;
   final double? fontSize;
   final double? radius;
   final FontWeight? fontWeight;
@@ -18,8 +18,8 @@ class CustomButton extends StatelessWidget {
       {Key? key,
       required this.buttonText,
       required this.onClick,
-      required this.buttonTextColor,
-      required this.buttonColor,
+       this.buttonTextColor,
+       this.buttonColor,
       this.fontSize,
       this.buttonHeight,
       this.fontWeight,
@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      height: buttonHeight ?? 0.056.sh,
+      height: buttonHeight ?? 20.h+20.w,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius ?? kMediumFont14.sw)),
       color: buttonColor,
