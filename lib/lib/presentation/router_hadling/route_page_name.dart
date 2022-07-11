@@ -8,4 +8,5 @@ class RoutePageName {
   static String rAddNewAddress = "/add-new-address";
   static String rMyAddress = "/my-address";
   static String rCheckout = "/checkout";
+  static String rFaq = "/faqs";
 }

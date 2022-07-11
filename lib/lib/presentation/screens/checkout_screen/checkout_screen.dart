@@ -7,9 +7,7 @@ import 'package:mya_ngwe_san/lib/presentation/reusable_widget/text_view.dart';
 import 'package:mya_ngwe_san/lib/presentation/router_hadling/route_page_name.dart';
 import 'package:mya_ngwe_san/lib/presentation/screens/checkout_screen/deliver_address_info.dart';
 import 'package:mya_ngwe_san/lib/utils/fonts_and_margins_constants.dart';
-
 import '../../reusable_widget/app_bar_with_drawer.dart';
-import '../../reusable_widget/custom_product_container.dart';
 import 'checkout_product.dart';
 import 'order_summary.dart';
 
