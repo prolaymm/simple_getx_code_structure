@@ -6,10 +6,10 @@ class CustomDashWidget extends StatelessWidget {
   final Color color;
   final double strokeWidth;
   final double gap;
-  final Widget widget;
+  final Widget? widget;
 
   const CustomDashWidget(
-      { Key? key, this.color = Colors.black, this.strokeWidth = 1.0, this.gap = 5.0, required this.widget}) : super(key: key);
+      { Key? key, this.color = Colors.black, this.strokeWidth = 1.0, this.gap = 5.0, this.widget}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
