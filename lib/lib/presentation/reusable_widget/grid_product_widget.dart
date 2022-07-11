@@ -27,7 +27,7 @@ class GridProductWidget extends StatelessWidget {
           color: Colors.yellow,
           height: 100,
           width: 100,
-          child: Text("Hello, banner!"),
+          child: const Text("Hello, banner!"),
         ),
       ),
     );

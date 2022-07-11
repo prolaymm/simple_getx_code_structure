@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -244,7 +243,7 @@ class HomeScreen extends StatelessWidget {
                                         productInformation:
                                             "No data available addhad ad adja dql daooa",
                                         onAddItemClick: () =>
-                                            print("Hell oworld")),
+                                            debugPrint("Hell oworld")),
                                   );
                                 }),
                           ),
@@ -296,7 +295,7 @@ class HomeScreen extends StatelessWidget {
                                         productInformation:
                                         "No data available addhad ad adja dql daooa",
                                         onAddItemClick: () =>
-                                            print("Hell oworld")),
+                                            debugPrint("Hell oworld")),
                                   );
                                 }),
                           ),
@@ -349,7 +348,7 @@ class HomeScreen extends StatelessWidget {
                                         productInformation:
                                         "No data available addhad ad adja dql daooa",
                                         onAddItemClick: () =>
-                                            print("Hell oworld")),
+                                            debugPrint("Hell oworld")),
                                   );
                                 }),
                           ),
@@ -402,7 +401,7 @@ class HomeScreen extends StatelessWidget {
                                         productInformation:
                                         "No data available addhad ad adja dql daooa",
                                         onAddItemClick: () =>
-                                            print("Hell oworld")),
+                                            debugPrint("Hell oworld")),
                                   );
                                 }),
                           ),
