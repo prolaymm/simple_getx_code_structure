@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_button.dart';
-import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_container.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_text_form_field.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/text_view.dart';
 import 'package:mya_ngwe_san/lib/presentation/screens/add_new_address_screen/city_and_state_dropdown.dart';
@@ -11,7 +9,6 @@ import 'package:mya_ngwe_san/lib/utils/fonts_and_margins_constants.dart';
 import 'package:mya_ngwe_san/lib/view_model/add_new_address_view_model.dart';
 
 import '../../reusable_widget/app_bar_with_drawer.dart';
-import '../../reusable_widget/custom_drop_down_button.dart';
 import 'custom_switch.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
