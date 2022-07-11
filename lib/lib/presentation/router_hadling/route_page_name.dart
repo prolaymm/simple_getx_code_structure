@@ -7,4 +7,5 @@ class RoutePageName {
   static String rAbout = "/about";
   static String rAddNewAddress = "/add-new-address";
   static String rMyAddress = "/my-address";
+  static String rCheckout = "/checkout";
 }
