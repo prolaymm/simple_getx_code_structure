@@ -10,4 +10,5 @@ class RoutePageName {
   static String rCheckout = "/checkout";
   static String rFaq = "/faqs";
   static String rHowTo = "/how-to";
+
 }

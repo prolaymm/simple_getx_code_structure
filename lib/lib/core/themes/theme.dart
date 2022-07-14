@@ -23,6 +23,7 @@ class StyleTheme {
           onSurface: Colors.blue,
 
           primaryContainer: cPrimaryContainer),
+      cardColor: cSecondaryContainer,
       textTheme: const TextTheme(
         labelMedium: TextStyle(color: Color(0xff5A596A)),
         bodyText1: TextStyle(color: Colors.white),
@@ -30,6 +31,7 @@ class StyleTheme {
         headline1: TextStyle(color: cOnPrimary),
         caption: TextStyle(color: cPrimaryColor),
       ),
+
 
       buttonTheme: const ButtonThemeData(buttonColor: cPrimaryColor,
           shape: RoundedRectangleBorder(),
