@@ -18,8 +18,8 @@ class CustomButton extends StatelessWidget {
       {Key? key,
       required this.buttonText,
       required this.onClick,
-       this.buttonTextColor,
-       this.buttonColor,
+      this.buttonTextColor,
+      this.buttonColor,
       this.fontSize,
       this.buttonHeight,
       this.fontWeight,
@@ -29,15 +29,16 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      height: buttonHeight ?? 20.h+20.w,
+      height: buttonHeight ?? 20.h + 20.w,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius ?? kMediumFont14.sw)),
-      color: buttonColor,
+          borderRadius: BorderRadius.circular(radius ?? 8.r)),
+      color: buttonColor ?? Theme.of(context).primaryColor,
       onPressed: onClick,
       child: TextView(
         title: buttonText,
         fontWeight: fontWeight,
-        color: buttonTextColor,
+        color:
+            buttonTextColor ?? Theme.of(context).textTheme.labelMedium!.color,
         fontSize: fontSize ?? kMediumFont14.sp,
       ),
     );
