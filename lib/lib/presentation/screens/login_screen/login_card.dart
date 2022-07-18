@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_button.dart';
 import 'package:mya_ngwe_san/lib/utils/fonts_and_margins_constants.dart';
 import 'package:mya_ngwe_san/lib/view_model/login_view_model.dart';
 
 import '../../reusable_widget/text_view.dart';
 import '../../reusable_widget/underline_text_form_field.dart';
+import '../../router_hadling/route_page_name.dart';
 
 class LoginCard extends StatelessWidget {
   final LoginViewModel loginVm;
@@ -16,31 +19,89 @@ class LoginCard extends StatelessWidget {
     TextEditingController emailTextController = TextEditingController();
     TextEditingController passwordTextController = TextEditingController();
     return Container(
-   //   width: double.infinity,
-      height: 200,
+      //   width: double.infinity,
+      // height: 200,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(38.r), topRight: Radius.circular(38.r)),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kDefaultMarginWidth.w,vertical: kDefaultMarginHeight.h),
+        padding: EdgeInsets.symmetric(
+            horizontal: 30.w, vertical: kDefaultMarginHeight.h),
         child: ListView(
-        //  crossAxisAlignment: CrossAxisAlignment.start,
+          //  crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             SizedBox(
-              height: 10.h+10.w,
+              height: 2.h + 2.w,
             ),
-            Center(child: TextView(title: 'Hello world', fontSize: kExtraLargeFont18.sp,fontWeight: FontWeight.bold,)),
-
-
+            Center(
+                child: TextView(
+              title: 'Log In',
+              fontSize: kLargestFont22.sp,
+              fontWeight: FontWeight.bold,
+            )),
             SizedBox(
-              height: 10.h+10.w,
+              height: 8.h + 8.w,
             ),
-            UnderLineTextFormField(textEditingController: emailTextController,prefixIcon: Icons.visibility_off,isPrefix: true,),
-            UnderLineTextFormField(textEditingController: emailTextController,prefixIcon: Icons.visibility_off,),
-            TextView(title: 'Hello world', fontSize: kSmallFont12.sp,),
+            TextView(
+              title: 'Email',
+              fontSize: kSmallFont12.sp,
+              color: Theme.of(context).hintColor,
+            ),
+            SizedBox(
+                height: 30.h,
+                child: UnderLineTextFormField(
+                  textEditingController: emailTextController,
+                )),
+            SizedBox(
+              height: 30.h,
+            ),
+            TextView(
+              title: 'Password',
+              fontSize: kSmallFont12.sp,
+              color: Theme.of(context).hintColor,
+            ),
+            SizedBox(
+                height: 30.h,
+                child: UnderLineTextFormField(
+                    textEditingController: passwordTextController,
+                    prefixIcon: Icons.visibility_off,
+                    isPassword: true,
+                    isPrefix: true)),
+            SizedBox(
+              height: kSmallMargin.h+kSmallMargin.w,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextView(
+                title: 'Forget Password?',
+                fontSize: kSmallFont12.sp,
+                color: Theme.of(context).hintColor,
+              ),
+            ),
+            SizedBox(
+              height: 30.h,),
+
+            CustomButton(buttonText: "Process", onClick: ()=>loginVm.login()),
+            SizedBox(
+              height: 30.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextView(
+                  title: 'Forget Password?',
+                  fontSize: kMediumFont14.sp,
+               //   color: Theme.of(context).hintColor,
+                ),
+                TextView(
+                  title: 'Create Account',
+                  fontSize: kMediumFont14.sp,
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ],
+            ),
           ],
         ),
       ),

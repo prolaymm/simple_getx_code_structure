@@ -6,6 +6,7 @@ class UnderLineTextFormField extends StatelessWidget {
   final String? hintText;
   final Color? unFocusColor;
   final bool? isPrefix;
+  final bool? isPassword;
   final bool? isVisible;
   final IconData? prefixIcon;
 
@@ -22,12 +23,15 @@ class UnderLineTextFormField extends StatelessWidget {
       this.onChange,
       this.onPrefixIconClick,
       this.hintText,
-      this.isVisible})
+      this.isVisible,
+      this.isPassword})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: textEditingController,
+      obscureText: isPassword ?? false,
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(

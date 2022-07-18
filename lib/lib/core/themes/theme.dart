@@ -25,7 +25,8 @@ class StyleTheme {
           primaryContainer: cPrimaryContainer),
       cardColor: cSecondaryContainer,
       textTheme: const TextTheme(
-        labelMedium: TextStyle(color: Color(0xff5A596A)),
+        labelMedium:  TextStyle(color: cPrimaryContainer),
+
         bodyText1: TextStyle(color: Colors.white),
         bodyText2: TextStyle(color: Colors.black),
         headline1: TextStyle(color: cOnPrimary),
