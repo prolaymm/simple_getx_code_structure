@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:mya_ngwe_san/lib/presentation/reusable_widget/custom_button.dart';
 import 'package:mya_ngwe_san/lib/utils/fonts_and_margins_constants.dart';
 import 'package:mya_ngwe_san/lib/view_model/login_view_model.dart';
 
 import '../../reusable_widget/text_view.dart';
 import '../../reusable_widget/underline_text_form_field.dart';
+import '../../router_hadling/route_page_name.dart';
 
 class LoginCard extends StatelessWidget {
   final LoginViewModel loginVm;
@@ -80,8 +82,26 @@ class LoginCard extends StatelessWidget {
             ),
             SizedBox(
               height: 30.h,),
-            
-            CustomButton(buttonText: "Process", onClick: ()=> debugPrint("Hello world"))
+
+            CustomButton(buttonText: "Process", onClick: ()=>loginVm.login()),
+            SizedBox(
+              height: 30.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextView(
+                  title: 'Forget Password?',
+                  fontSize: kMediumFont14.sp,
+               //   color: Theme.of(context).hintColor,
+                ),
+                TextView(
+                  title: 'Create Account',
+                  fontSize: kMediumFont14.sp,
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ],
+            ),
           ],
         ),
       ),
